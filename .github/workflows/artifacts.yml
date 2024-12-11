@@ -15,9 +15,9 @@ jobs:
     steps:
 
     - name: Check out code
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
     - name: Upload artifact for windows
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@v2
       with:
         name: ${{env.ARTIFACTS}}
         path: .
