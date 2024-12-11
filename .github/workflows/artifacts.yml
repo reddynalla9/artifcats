@@ -9,13 +9,15 @@ on: [push]
 env:
   ARTIFACTS: myartifacts
 jobs:
-  main:
-   runs-on: ubuntu-latest
-   steps: 
-    -name: Checkout the code
-     uses: actions/checkout@v2
-    -name: Upload the artifact
-      uses: actions/upload-artifact@v2
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Check out code
+      uses: actions/checkout@v1
+    - name: Upload artifact for windows
+      uses: actions/upload-artifact@v1.0.0
       with:
         name: ${{env.ARTIFACTS}}
         path: .
